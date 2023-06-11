@@ -31,7 +31,7 @@
             <div class="img">
                 <img src="./images/logo.svg" alt="Logo" />
             </div>
-            <div class="nav-toggle">
+            <div id="toggle" class="nav-toggle" data-visible="false">
                 <img
                     id="menu-open"
                     src="./images/icon-menu.svg"
@@ -41,9 +41,10 @@
                     id="menu-close"
                     src="./images/icon-close-menu.svg"
                     alt="nav-toggle-close"
+                    class = "hide"
                 />
             </div>
-            <nav>
+            <nav id = "navigation" class = "translateHide">
                 <ul>
                     <li>
                         Features

@@ -8,6 +8,7 @@
 body {
   font-family: "Epilogue", sans-serif;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .img,
@@ -16,11 +17,26 @@ body {
   align-items: center;
 }
 
-.nav-toggle img[id=menu-close] {
+.nav-toggle img {
+  z-index: 9999;
+}
+
+.hide {
   display: none;
 }
-.nav-toggle img[id=menu-open] {
-  z-index: 9999;
+
+.show {
+  display: block;
+}
+
+.translateShow {
+  transform: translateX(0%);
+  transition: 300ms ease-in-out;
+}
+
+.translateHide {
+  transform: translateX(100%);
+  transition: 300ms ease-in-out;
 }
 
 header {
@@ -30,6 +46,7 @@ header {
   align-items: center;
 }
 header nav {
+  transform: translateX(100%);
   position: fixed;
   background-color: hsl(0, 0%, 98%);
   inset: 0 0 0 35%;
@@ -54,6 +71,7 @@ header nav ul li span {
   align-items: center;
 }
 header::before {
+  display: none;
   content: "";
   background: rgba(0, 0, 0, 0.65);
   position: fixed;
