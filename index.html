@@ -28,7 +28,7 @@
     </head>
     <body>
         <header>
-          <span id="backdrop" class = "hide"></span>
+            <span id="backdrop" class="hide"></span>
             <div class="img">
                 <img src="./images/logo.svg" alt="Logo" />
             </div>
@@ -42,21 +42,27 @@
                     id="menu-close"
                     src="./images/icon-close-menu.svg"
                     alt="nav-toggle-close"
-                    class = "hide"
+                    class="hide"
                 />
             </div>
-            <nav id = "navigation" class = "translateHide">
+            <nav id="navigation" class="translateHide">
                 <ul>
-                    <li>
+                    <li id="f-sub-list-toggle">
                         Features
                         <span class="sub-list-toggle">
                             <img
+                                class="show hide"
                                 src="./images/icon-arrow-down.svg"
                                 alt="arrow down"
                             />
+                            <img
+                                class="hide"
+                                src="./images//icon-arrow-up.svg"
+                                alt="arrow up"
+                            />
                         </span>
                     </li>
-                    <div class="sub-list">
+                    <div id="f-sub-list" class="sub-list hide">
                         <div class="sub-list-item">
                             <span>
                                 <img src="./images/icon-todo.svg" alt="todo" />
@@ -91,16 +97,22 @@
                             Planning
                         </div>
                     </div>
-                    <li>
+                    <li id="c-sub-list-toggle">
                         Company
                         <span class="sub-list-toggle">
                             <img
+                                class="show hide"
                                 src="./images/icon-arrow-down.svg"
                                 alt="arrow down"
                             />
+                            <img
+                                class="hide"
+                                src="./images//icon-arrow-up.svg"
+                                alt="arrow up"
+                            />
                         </span>
                     </li>
-                    <div class="sub-list">
+                    <div id="c-sub-list" class="sub-list hide">
                         <div class="sub-list-item">History</div>
                         <div class="sub-list-item">Our Team</div>
                         <div class="sub-list-item">Blog</div>
@@ -109,14 +121,41 @@
                     <li>About</li>
                 </ul>
                 <div class="nav-btn">
-                    <button>Login</button>
+                    <button id = "login">Login</button>
                     <button>Register</button>
                 </div>
             </nav>
         </header>
-        <!-- Make remote work Get your team in sync, no matter your location.
-        Streamline processes, create team rituals, and watch productivity soar.
-        Learn more -->
+        <main>
+            <div class="content">
+                <h1>Make remote work</h1>
+                <p>
+                    Get your team in sync, no matter your location. Streamline
+                    processes, create team rituals, and watch productivity soar.
+                </p>
+                <button>Learn more</button>
+                <div class="clientLogos">
+                    <span>
+                        <img src="./images/client-databiz.svg" alt="databiz" />
+                    </span>
+                    <span>
+                        <img
+                            src="./images/client-audiophile.svg"
+                            alt="audiophile"
+                        />
+                    </span>
+                    <span>
+                        <img src="./images/client-meet.svg" alt="meet" />
+                    </span>
+                    <span>
+                        <img src="./images/client-maker.svg" alt="maker" />
+                    </span>
+                </div>
+            </div>
+            <div class="heroImage">
+                <img src="./images/image-hero-mobile.png" alt="mobile image" />
+            </div>
+        </main>
 
         <!-- <div class="attribution">
             Challenge by
