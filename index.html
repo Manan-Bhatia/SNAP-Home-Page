@@ -121,7 +121,7 @@
                     <li>About</li>
                 </ul>
                 <div class="nav-btn">
-                    <button id = "login">Login</button>
+                    <button id="login">Login</button>
                     <button>Register</button>
                 </div>
             </nav>
@@ -153,7 +153,16 @@
                 </div>
             </div>
             <div class="heroImage">
-                <img src="./images/image-hero-mobile.png" alt="mobile image" />
+                <picture>
+                    <source
+                        media="(min-width: 768px)"
+                        srcset="./images/image-hero-desktop.png"
+                    />
+                    <img
+                        src="./images/image-hero-mobile.png"
+                        alt="mobile image"
+                    />
+                </picture>
             </div>
         </main>
 

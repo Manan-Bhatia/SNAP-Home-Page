@@ -52,18 +52,21 @@ body {
     transition: 300ms ease-in-out;
 }
 
-#backdrop {
-    content: "";
-    background: rgba(0, 0, 0, 0.65);
-    position: fixed;
-    inset: 0;
-}
-
 header {
     padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 700px) {
+    #backdrop {
+        content: "";
+        background: rgba(0, 0, 0, 0.65);
+        position: fixed;
+        inset: 0;
+    }
+
     nav {
         transform: translateX(100%);
         position: fixed;
@@ -89,40 +92,134 @@ header {
             }
         }
     }
-}
 
-.sub-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin: 1.25em;
-    .sub-list-item {
-        font-size: 0.85rem;
+    .sub-list {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: 1em;
-        span {
+        margin: 1.25em;
+        .sub-list-item {
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
+            gap: 1em;
+            span {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    .nav-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        button {
+            border: 1px solid $Almost-Black;
+            background-color: transparent;
+            padding: 0.75em;
+            border-radius: 1em;
+            color: $Medium-Gray;
+            font-size: 0.8rem;
+        }
+        #login {
+            border: none;
         }
     }
 }
 
-.nav-btn {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-
-    button {
-        border: 1px solid $Almost-Black;
-        background-color: transparent;
-        padding: 0.75em;
-        border-radius: 1em;
-        color: $Medium-Gray;
-        font-size: 0.8rem;
+@media (min-width: 700px) {
+    #toggle {
+        display: none;
     }
-    #login{
-        border: none;
+    header {
+        gap: 3rem;
+    }
+    nav {
+        position: relative;
+        flex: 2;
+        display: flex;
+        justify-content: space-between;
+        transform: inherit !important;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            li {
+                font-size: 0.9rem;
+                display: flex;
+                gap: 0.35em;
+                align-items: center;
+                color:$Medium-Gray;
+                span {
+                    display: flex;
+                    align-items: center;
+                }
+                &:hover{
+                    cursor: pointer;
+                    color:$Almost-Black;
+                }
+            }
+
+        }
+
+        #f-sub-list {
+            top: 2.5rem;
+            left: -4.5rem;
+        }
+
+        #c-sub-list {
+            top: 2.5rem;
+            left: 6.25rem;
+        }
+    }
+
+    .sub-list {
+        position: absolute;
+        max-height: min-content;
+        max-width: max-content;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: $Almost-White;
+        box-shadow: 0 0 20px 5px hsla(0, 0%, 41%, 0.2);
+        border-radius: 0.5rem;
+        .sub-list-item {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            span {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    .nav-btn {
+        display: flex;
+        gap: 1rem;
+        button {
+            border: 2px solid $Medium-Gray;
+            background-color: transparent;
+            padding: 0.75em 1.25em;
+            border-radius: 0.75em;
+            color: $Medium-Gray;
+            font-size: 0.8rem;
+            &:hover{
+                cursor: pointer;
+                border-color: $Almost-Black;
+                color:$Almost-Black;
+            }
+        }
+        #login {
+            border: none;
+        }
     }
 }
 
@@ -151,11 +248,16 @@ main {
 
     button {
         font-size: 0.85em;
-        border: none;
+        border: 2px solid $Almost-Black;
         padding: 0.8em 1.5em;
         background-color: $Almost-Black;
         color: $Almost-White;
         border-radius: 0.75em;
+        &:hover{
+            cursor: pointer;
+            background-color: $Almost-White;
+            color: $Almost-Black;
+        }
     }
 }
 
@@ -165,4 +267,89 @@ main {
     gap: 1em;
     margin-block: 2em;
     padding-inline: 1em;
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-wrap: nowrap;
+        padding: 2rem;
+        align-items: flex-end;
+        gap: 1rem;
+        .content {
+            align-items: flex-start;
+            h1 {
+                font-size: 2.5rem;
+                text-align: left;
+            }
+            p {
+                font-size: .9em;
+                text-align: left;
+                padding-left: 0;
+            }
+        }
+        .heroImage picture {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    .clientLogos {
+        margin-bottom: 0;
+        margin-top: 4rem;
+    }
+}
+
+@media (min-width: 900px)
+{
+    main{
+        padding: 2rem 1rem;
+        gap: 2rem;
+        .content {
+            h1{
+                font-size: 3.5rem;
+            }
+            p{
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1000px)
+{
+    main{
+        padding: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        flex-wrap: nowrap;
+        padding: 2.5rem 7.5rem;
+        align-items: flex-end;
+        gap: 5rem;
+        .content {
+            align-items: flex-start;
+            h1 {
+                font-size: 4.25rem;
+                text-align: left;
+            }
+            p {
+                font-size: 1em;
+                text-align: left;
+                padding-left: 0;
+                padding-right: 5rem;
+                margin-bottom: 3rem;
+            }
+        }
+        .heroImage picture {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    .clientLogos {
+        margin-bottom: 0;
+        margin-top: 4rem;
+    }
 }
